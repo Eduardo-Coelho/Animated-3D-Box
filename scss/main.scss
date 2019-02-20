@@ -1,0 +1,223 @@
+// Dimensions of the Box
+$box-height: 300px;
+$box-length: 600px;
+$box-depth: $box-length;
+$spacing: 10px;
+$br: 2px;
+
+// Colors
+$text-light: #fff;
+$text-dark: #666;
+
+$blue: #0a658f;
+$white: #ffffff;
+$dark: #000000;
+
+
+* {
+    box-sizing: border-box;
+
+
+}
+
+body {
+    font-family: sans-serif;
+    background-color: $blue;
+    padding: $spacing;
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+
+}
+
+div {
+
+    font-size: 10px;
+    color: $white;
+
+}
+
+img {
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+
+.location {
+    //display: flex;
+
+    padding: 0px !important;
+    margin: 20px !important;
+    font-size: 30px;
+
+}
+
+.changeBackground {
+
+
+    background-color: rgb(35, 158, 189);
+    -webkit-transition: background 1.3s linear;
+    -moz-transition: background 1.3s linear;
+    -ms-transition: background 1.3s linear;
+    -o-transition: background 0.3s linear;
+    transition: background 1.3s linear;
+}
+
+.changeBackground1 {
+
+    background-color: rgb(77, 194, 145);
+    -webkit-transition: background 1.3s linear;
+    -moz-transition: background 1.3s linear;
+    -ms-transition: background 1.3s linear;
+    -o-transition: background 1.3s linear;
+    transition: background 1.3s linear;
+}
+
+.changeBackground2 {
+    background-color: rgb(153, 81, 81);
+
+    -webkit-transition: background 1.3s linear;
+    -moz-transition: background 1.3s linear;
+    -ms-transition: background 1.3s linear;
+    -o-transition: background 1.3s linear;
+    transition: background 1.3s linear;
+}
+
+
+.changeBackground3 {
+    background-color: rgb(206, 135, 68);
+
+    -webkit-transition: background 1.10s linear;
+    -moz-transition: background 1.10s linear;
+    -ms-transition: background 1.10s linear;
+    -o-transition: background 1.10s linear;
+    transition: background 1.10s linear;
+}
+
+.changeBackground4 {
+    background-color: rgb(216, 216, 216);
+
+    -webkit-transition: background 1.3s linear;
+    -moz-transition: background 1.3s linear;
+    -ms-transition: background 1.3s linear;
+    -o-transition: background 1.3s linear;
+    transition: background 1.3s linear;
+}
+
+
+
+
+.wrapper {
+    width: $box-length;
+    height: $box-height;
+    margin: 280px auto;
+    perspective: 600px;
+    text-align: left;
+
+}
+
+.rec-prism {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in;
+
+}
+
+
+
+.face {
+    position: absolute;
+    width: $box-length;
+    height: $box-height;
+    padding: $spacing;
+    opacity: 0.6;
+    background: rgba(9, 16, 48, 0.96);
+    border: double rgb(34, 133, 25) 1px;
+    border-radius: 1px;
+
+    .content {
+        color: $text-dark;
+
+
+        .field-wrapper {
+            margin-top: $spacing*1.5;
+            position: relative;
+
+            label {
+                position: absolute;
+                pointer-events: none;
+                font-size: 0.85em;
+                top: 40%;
+                left: 0;
+                transform: translateY(-50%);
+                transition: all ease-in 0.25s;
+                color: lighten($text-dark, 20%);
+            }
+        }
+    }
+
+
+    &-front {
+        transform: rotateY(0deg) translateZ($box-length/2);
+    }
+
+    &-top {
+        height: $box-depth;
+        transform: rotateX(90deg) translateZ($box-depth/2);
+    }
+
+    &-back {
+        transform: rotateY(180deg) translateZ($box-length/2);
+    }
+
+    &-right {
+        transform: rotateY(90deg) translateZ($box-length/2);
+    }
+
+    &-left {
+        transform: rotateY(-90deg) translateZ($box-length/2);
+    }
+
+    &-bottom {
+        height: $box-depth;
+        transform: rotateX(-90deg) translateZ($box-height - ($box-depth/2));
+    }
+}
+
+// .nav {
+
+//     justify-content: center;
+//     font-size: 20px;
+
+
+//     button {
+//         display: inline-block;
+
+//         font-size: 0px;
+//         margin: 0 $spacing/2;
+//         padding: 2px;
+//         color: $dark;
+
+//         border: solid 2px rgb(255, 255, 255);
+
+//         &:hover {
+//             color: $blue;
+
+//         }
+
+//     }
+
+// }
+
+
+@-webkit-keyframes success {
+    from {
+        -webkit-transform: translate(-50%, -50%) rotate(0) scale(0);
+    }
+
+    to {
+        -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+    }
+}
